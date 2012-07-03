@@ -1,0 +1,7 @@
+postgresql:
+  :adapter: postgresql
+  :username: redmine
+  :password: redmine
+  :database: redmine
+  :schema_search_path: redmine_test
+
