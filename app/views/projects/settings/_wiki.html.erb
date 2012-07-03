@@ -10,21 +10,6 @@
 <em><%= l(:text_unallowed_characters) %>: , . / ? ; : |</em></p>
 </div>
 
-<%#
-# Form to save Redmine Wiki Publisher settings
--%>
-<% labelled_tabular_form_for :wiki_publisher_setting, @wiki_publisher_setting, :url => {:controller => 'wiki_publisher_settings', :action => 'update', :project_id => @project, :wiki_publisher_setting_id => @wiki_publisher_setting_id} do |form_wiki_publisher_settings| %>
-
-<div class="box tabular">
-<p><%= form_wiki_publisher_settings.text_field :design_repository_url, :size => 60, :required => true %><br />
-<em><%= l(:text_unallowed_characters) %>: , . ? ; : |</em></p>
-</div>
-
-<% end %>
-<%#
-# End Form to save Redmine Wiki Publisher settings
--%>
-
 
 <div class="contextual">
 <%= link_to(l(:button_delete), {:controller => 'wikis', :action => 'destroy', :id => @project},

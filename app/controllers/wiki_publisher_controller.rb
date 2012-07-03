@@ -28,9 +28,9 @@ private
 
    def find_repository
      @repo = @project.repository
-
-     #Project design directory wich store the documentation. Example: 'trunk/design'
-     @design_repository_url = params[:design_repository_url]
+     @wiki_publisher_setting = WikiPublisherSetting.find(:first, :conditions => ['wiki_id = ?', @wiki.id])
+     #TODO: Validar caso não seja encontrada a wiki_id
+     @design_repository_url = @wiki_publisher_setting.design_repository_url
    end
   
    def find_repository_wiki_files
