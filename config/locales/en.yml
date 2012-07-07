@@ -1,5 +1,6 @@
 # English strings go here for Rails i18n
 en:
+  wiki_publisher: "Wiki Publisher"
   import_from_repo: "Import Documentation From Repository"
   field_design_repository_url: "Repository Design URL"
   notice_failed_to_save_redmine_wiki_publisher_settings: "Updating failed on save Redmine Wiki Publisher settings"

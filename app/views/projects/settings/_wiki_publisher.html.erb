@@ -1,5 +1,9 @@
-<% remote_form_for :wiki_publisher_setting, @wiki_publisher_setting,
-                   :url => { :controller => 'wiki_publisher_settings', :action => 'update', :project_id => @project },
+<%
+    @wiki_publisher_setting = WikiPublisherSetting.find_or_create(@wiki.id)
+%>
+
+<% labelled_tabular_form_for :wiki_publisher_setting, @wiki_publisher_setting,
+                   :url => { :controller => 'wiki_publisher_settings', :action => 'edit', :id => @project, :wiki => @wiki},
                    :builder => TabularFormBuilder,
                    :lang => current_language do |f| %>
 
@@ -7,7 +11,6 @@
 
 <div class="box tabular">
 <p><%= f.text_field :design_repository_url, :size => 60, :required => true %><br />
-<em><%= l(:text_unallowed_characters) %>: , . ? ; : |</em></p>
 </div>
 
 <%= submit_tag(l(:button_save)) %>

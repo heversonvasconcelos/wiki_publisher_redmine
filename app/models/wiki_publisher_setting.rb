@@ -8,7 +8,7 @@ class WikiPublisherSetting < ActiveRecord::Base
 
    def self.find_or_create(wiki_id)
       wiki_publisher_setting = WikiPublisherSetting.find(:first, :conditions => ['wiki_id = ?', wiki_id])
-      unless setting
+      unless wiki_publisher_setting
          wiki_publisher_setting = WikiPublisherSetting.new
          wiki_publisher_setting.wiki_id = wiki_id
          wiki_publisher_setting.save!      

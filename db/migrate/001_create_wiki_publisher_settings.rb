@@ -5,7 +5,7 @@ class CreateWikiPublisherSettings < ActiveRecord::Migration
 
       t.column :wiki_id, :integer
       #Project design directory wich store the documentation. Example: 'trunk/design'
-      t.string :design_repository_url, :limit => 60, :default => 'trunk/design'
+      t.column :design_repository_url, :string, :limit => 255, :default => 'trunk/design', :null => false
 
     end
   end

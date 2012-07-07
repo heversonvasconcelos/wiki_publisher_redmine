@@ -1,5 +1,6 @@
 # Brazillian Portuguese strings go here for Rails i18n
 pt-BR:
+  wiki_publisher: "Wiki Publisher"
   import_from_repo: "Importar Documentação do Repositório"
   field_design_repository_url: "URL do Repositório do Diretório Design"
   notice_failed_to_save_redmine_wiki_publisher_settings: "Falha na atualização das configurações do Redmine Wiki Publisher"

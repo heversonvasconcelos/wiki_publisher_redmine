@@ -6,6 +6,8 @@ class WikiPublisherControllerTest < ActionController::TestCase
   fixtures :projects, :repositories
   self.use_transactional_fixtures = false
 
+  include ProjectsHelper
+
   def setup
      @project = Project.find(1)
      @wiki = @project.wiki
@@ -19,10 +21,16 @@ class WikiPublisherControllerTest < ActionController::TestCase
   end
 
   def test_wiki_format
-    logger.info('.' + @text_formatting)
+    #logger.info('.' + @text_formatting)
     assert_equal(@text_formatting, 'textile')
   end
 
+  def test_project_settings_tabs
+    @tabs = project_settings_tabs
+    logger.info(@tabs)
+  end
+
+=begin
   def test_project_repository_find_textile_files
     Dir.chdir(Dir.tmpdir)
     `svn co #{@repo.url}`
