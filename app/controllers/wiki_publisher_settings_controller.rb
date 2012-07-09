@@ -5,6 +5,8 @@ class WikiPublisherSettingsController < ApplicationController
    
    menu_item :wiki_publisher
    before_filter :find_project, :find_wiki
+   
+   verify :method => :post, :only => [:edit], :render => { :nothing => true, :status => :method_not_allowed }
 
    def edit
      design_repository_url = params[:wiki_publisher_setting][:design_repository_url]
@@ -17,6 +19,7 @@ class WikiPublisherSettingsController < ApplicationController
         #flash[:error] = l(:notice_failed_to_save_redmine_wiki_publisher_settings)
      end
      redirect_to :controller => 'projects', :action => 'settings', :id => @project, :tab => :wiki_publisher
+     #render(:update) {|page| page.replace_html "tab-content-wiki_publisher", :partial => 'projects/settings/wiki_publisher'}
    end
    
 private

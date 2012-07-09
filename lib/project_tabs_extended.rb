@@ -19,7 +19,7 @@ module ProjectTabsExtended
 
         def project_settings_tabs_with_wiki_publisher
             tabs = project_settings_tabs_without_wiki_publisher
-            tabs.push({:name => :wiki_publisher, :controller => :wiki_publisher_settings, :action => :manage_wiki_publisher_setting, :partial => 'projects/settings/wiki_publisher', :label => :wiki_publisher})
+            tabs.push({:name => :wiki_publisher, :partial => 'projects/settings/wiki_publisher', :label => :wiki_publisher})
             return tabs
         end
 

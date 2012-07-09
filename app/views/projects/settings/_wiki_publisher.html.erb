@@ -2,7 +2,7 @@
     @wiki_publisher_setting = WikiPublisherSetting.find_or_create(@wiki.id)
 %>
 
-<% labelled_tabular_form_for :wiki_publisher_setting, @wiki_publisher_setting,
+<% remote_form_for :wiki_publisher_setting, @wiki_publisher_setting,
                    :url => { :controller => 'wiki_publisher_settings', :action => 'edit', :id => @project, :wiki => @wiki},
                    :builder => TabularFormBuilder,
                    :lang => current_language do |f| %>
