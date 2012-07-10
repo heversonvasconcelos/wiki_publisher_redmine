@@ -3,10 +3,10 @@ require 'tmpdir'
 require 'find'
 
 class WikiPublisherControllerTest < ActionController::TestCase
-  fixtures :projects, :repositories
   self.use_transactional_fixtures = false
+  #self.use_instantiated_fixtures = true
 
-  include ProjectsHelper
+  fixtures :projects, :repositories
 
   def setup
      @project = Project.find(1)
@@ -18,6 +18,7 @@ class WikiPublisherControllerTest < ActionController::TestCase
 
   def test_project_find
     assert_equal(@project.identifier, 'projetoteste')
+    #assert_equal(@project.identifier, 'redminewikipublisher')
   end
 
   def test_wiki_format
@@ -25,9 +26,8 @@ class WikiPublisherControllerTest < ActionController::TestCase
     assert_equal(@text_formatting, 'textile')
   end
 
-  def test_project_settings_tabs
-    @tabs = project_settings_tabs
-    logger.info(@tabs)
+  def test_repository_find
+    assert_not_nil(@repo)
   end
 
 =begin
