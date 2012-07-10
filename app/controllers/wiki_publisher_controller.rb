@@ -15,7 +15,7 @@ class WikiPublisherController < ApplicationController
             @page.save
          end
       end
-      redirect_to :controller => :wiki, :action => 'show', :project_id => @project, :id => @page.title
+      redirect_to :controller => 'wiki', :action => 'show', :project_id => @project
    end
    
 private
@@ -23,13 +23,11 @@ private
      @project = Project.find(params[:project_id])
      @wiki = @project.wiki
      @text_formatting = Setting.text_formatting
-     render_404 unless @wiki
    end
 
    def find_repository
      @repo = @project.repository
      @wiki_publisher_setting = WikiPublisherSetting.find(:first, :conditions => ['wiki_id = ?', @wiki.id])
-     #TODO: Validar caso não seja encontrada a wiki_id
      @design_repository_url = @wiki_publisher_setting.design_repository_url
    end
   
@@ -37,8 +35,8 @@ private
       Dir.chdir(Dir.tmpdir)
       `svn co #{@repo.url}`
       Dir.chdir(@project.identifier)
-      textile_design_files = File.join(@design_repository_url, "**", "*." + @text_formatting)
-      repo_files = Dir.glob(textile_design_files)
+      design_files = File.join(@design_repository_url, "**", "*." + @text_formatting)
+      repo_files = Dir.glob(design_files)
       return repo_files
    end
 
