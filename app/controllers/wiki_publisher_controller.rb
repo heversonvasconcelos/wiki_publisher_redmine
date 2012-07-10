@@ -2,10 +2,11 @@ require 'tmpdir'
 require 'find'
 
 class WikiPublisherController < ApplicationController
-   before_filter :find_wiki, :find_repository
+   before_filter :find_wiki
 
    def import_wiki_files_from_repository
       begin
+         find_repository
          files = find_repository_wiki_files
          files.each do |file|
             pagetitle = File.basename(file, '.' + @text_formatting)
