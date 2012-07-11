@@ -14,6 +14,6 @@ Redmine::Plugin.register :redmine_wiki_publisher do
   version '0.0.9'
   url "https://github.com/heversonvasconcelos/redmine_wiki_publisher"
   
-  requires_redmine :version => '1.3.0'
+  requires_redmine :version_or_higher => '1.3.0'
 
 end
