@@ -1,5 +1,0 @@
-= redmine_publisher
-
-Description goes here
-
-ProjectTabsExtended from redmine-dmsf https://github.com/danmunn/redmine_dmsf

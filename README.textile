@@ -1,0 +1,51 @@
+h1. Redmine Wiki Publisher
+
+h2. DESCRIPTION
+
+Redmine Wiki Publisher is a Redmine plugin that publishes project documentation into wiki pages.
+
+h2. INSTALLATION
+
+This plugin uses some stored settings, so the database will have
+to be modified in the installation.
+
+For more information on how to install a Redmine plugin, see "Redmine Plugins":http://www.redmine.org/projects/redmine/wiki/Plugins
+
+h2. CONFIGURATIONS
+
+The only configuration needed, is a relative url where documentation is located in the SCM repository.
+This url is defined in "Wiki Publisher" tab at project configuration.
+Projects -> My Project -> Settings -> Wiki Publisher
+The default value of field named "Design Repository URL" is setted as "trunk/design",
+following some conventions where Redmine Wiki Publisher was initially developed. 
+
+h2. DEPENDENCIES
+
+h3. Redmine SCMacros
+
+Redmine Wiki Publisher uses wiki macros that are not recognized by Redmine by default.
+The repo_include macro used is from another plugin, "Redmine SCMacros":https://github.com/gpr/redmine_scmacros
+This macro includes a file from repository (svn, git, etc) in the project wiki.
+Example:
+<pre>
+{{repo_include(design/gpr/index.textile)}}
+</pre>
+
+h2. USAGE
+
+Project repository setted and Redmine Wiki Publisher url configured, click on link "Import From Repository" in wiki edit page. 
+It will try to find all wiki files (default is textile) stored at repository pointed by "Design Repository URL"
+
+h2. COMPATIBILITY
+
+This plugin was developed using Redmine 1.3.2 and it was not tested with another version.
+For while, the only SCM supported is Subversion SVN.
+
+h2. TODO
+
+It must be extended to support others SCM like Git, Mercurial, Bazaar, etc.
+
+h2. REFERENCES
+
+The solution to create a project settings tab, was found in "Redmine DMSF Plugin":https://github.com/danmunn/redmine_dmsf
+The Redmine Wiki Publisher uses an adapted class ProjectTabsExtended from redmine_dmsf.
