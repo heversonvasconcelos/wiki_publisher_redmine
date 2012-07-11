@@ -1,4 +1,3 @@
-
 class CreateWikiPublisherSettings < ActiveRecord::Migration
   def self.up
     create_table :wiki_publisher_settings do |t|

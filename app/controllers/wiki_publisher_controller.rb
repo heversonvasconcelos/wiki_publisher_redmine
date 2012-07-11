@@ -42,9 +42,9 @@ class WikiPublisherController < ApplicationController
     end
   end
 
+  #TODO: Refatorar este metodo para um helper que funcione para os demais SCM
   def find_repository_wiki_files
     begin
-    #TODO: Refatorar este metodo para um helper que funcione para os demais SCM
       find_repository
       Dir.chdir(Dir.tmpdir)
       `svn co #{@repo.url}`
