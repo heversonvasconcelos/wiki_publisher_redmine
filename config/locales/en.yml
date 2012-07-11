@@ -1,7 +1,11 @@
 # English strings go here for Rails i18n
 en:
   wiki_publisher: "Wiki Publisher"
-  import_from_repo: "Import Documentation From Repository"
-  field_design_repository_url: "Repository Design URL"
-  notice_failed_to_save_redmine_wiki_publisher_settings: "Updating failed on save Redmine Wiki Publisher settings"
-  design_repository_url: "Design Repository URL"
+  import_from_repo: "Import From Repository"
+  import_from_repo_title: "Import Documentation From Repository"
+  field_design_repository_url: "Design Repository URL"
+
+  error_failed_to_save_redmine_wiki_publisher_settings: "Updating failed on save Redmine Wiki Publisher settings"
+  error_failed_to_access_project_repository: "Failed to acess project repository"
+  error_failed_to_access_redmine_wiki_publisher_settings: "Failed to access Redmine Wiki Publisher"
+  error_repository_wiki_files_not_found: "Repository wiki files not found"

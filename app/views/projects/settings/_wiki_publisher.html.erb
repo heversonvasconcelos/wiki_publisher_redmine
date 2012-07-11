@@ -1,16 +1,18 @@
 <%
-    @wiki_publisher_setting = WikiPublisherSetting.find_or_create(@wiki.id)
+ @wiki_publisher_setting = WikiPublisherSetting.find_or_create(@wiki.id)
 %>
 
 <% remote_form_for :wiki_publisher_setting, @wiki_publisher_setting,
-                   :url => { :controller => 'wiki_publisher_settings', :action => 'edit', :id => @project, :wiki => @wiki},
-                   :builder => TabularFormBuilder,
-                   :lang => current_language do |f| %>
+:url => { :controller => 'wiki_publisher_settings', :action => 'edit', :id => @project, :wiki => @wiki},
+:builder => TabularFormBuilder,
+:lang => current_language do |f| %>
 
 <%= error_messages_for 'wiki_publisher_setting' %>
 
 <div class="box tabular">
-<p><%= f.text_field :design_repository_url, :size => 60, :required => true %><br />
+	<p>
+		<%= f.text_field :design_repository_url, :size => 60, :required => true %>
+		<br />
 </div>
 
 <%= submit_tag(l(:button_save)) %>
