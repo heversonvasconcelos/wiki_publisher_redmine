@@ -12,7 +12,7 @@ Redmine::Plugin.register :redmine_wiki_publisher do
   author 'Heverson Vasconcelos'
   description 'This is a plugin for Redmine that publishes project documentation into wiki'
   version '0.0.9'
-  url "https://github.com/heversonvasconcelos/redmine_wiki_publisher"
+  url "https://github.com/heversonvasconcelos/redmine_wiki_publisher_ruby"
   
   requires_redmine :version_or_higher => '1.3.0'
 
