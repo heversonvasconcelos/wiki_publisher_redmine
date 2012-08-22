@@ -5,13 +5,12 @@ require 'find'
 class WikiPublisherControllerTest < ActionController::TestCase
   self.use_transactional_fixtures = false
   #self.use_instantiated_fixtures = true
-
-  fixtures :projects, :repositories
+  #fixtures :projects, :repositories
   def setup
     @project = Project.find(1)
     @wiki = @project.wiki
     @repo = @project.repository
-    @designrepodir = 'trunk/design'
+    @design_repository_url = 'trunk/design'
     @text_formatting = Setting.text_formatting
   end
 
@@ -27,17 +26,19 @@ class WikiPublisherControllerTest < ActionController::TestCase
 
   def test_repository_find
     assert_not_nil(@repo)
+    logger.info(@repo.url)
+    logger.info(@repo.login)
+    logger.info(@repo.password)
   end
 
-=begin
-def test_project_repository_find_textile_files
-Dir.chdir(Dir.tmpdir)
-`svn co #{@repo.url}`
-Dir.chdir(@project.identifier)
-textile_design_files = File.join(@designrepodir, "**", "*.textile")
-repo_files = Dir.glob(textile_design_files)
-return repo_files
-end
+  def test_project_repository_find_textile_files
+    Dir.chdir(Dir.tmpdir)
+    `svn co #{@repo.url} --username #{@repo.login} --password #{@repo.password} --no-auth-cache --non-interactive`
+    Dir.chdir(@project.identifier)
+    design_files = File.join(@design_repository_url, "**", "*." + @text_formatting)
+    repo_files = Dir.glob(design_files)
+    assert_not_nil(repo_files)
+  end
 
 =begin
 def test_project_create_wiki_page
