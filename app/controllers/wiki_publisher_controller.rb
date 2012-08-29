@@ -47,7 +47,7 @@ class WikiPublisherController < ApplicationController
     begin
       find_repository
       Dir.chdir(Dir.tmpdir)
-      `svn co #{@repo.url} --username #{@repo.login} --password #{@repo.password} --no-auth-cache --non-interactive`
+      `svn co #{@repo.url} --username #{@repo.login} --password #{@repo.password} --no-auth-cache --non-interactive --force`
       Dir.chdir(@project.identifier)
       design_files = File.join(@design_repository_url, "**", "*." + @text_formatting)
       repo_files = Dir.glob(design_files)
