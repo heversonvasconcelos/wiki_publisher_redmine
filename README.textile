@@ -1,8 +1,8 @@
-h1. Redmine Wiki Publisher
+h1. Wiki Publisher Redmine
 
 h2. DESCRIPTION
 
-Redmine Wiki Publisher is a Redmine plugin that publishes project documentation into wiki pages.
+Wiki Publisher Redmine is a Redmine plugin that publishes project documentation into wiki pages.
 
 h2. INSTALLATION
 
@@ -18,13 +18,13 @@ This url is defined in "Wiki Publisher" tab at project configuration.
 Projects -> My Project -> Settings -> Wiki Publisher
 
 The default value of field named "Design Repository URL" is setted as "trunk/design",
-following some conventions where Redmine Wiki Publisher was initially developed. 
+following some conventions where Wiki Publisher Redmine was initially developed. 
 
 h2. DEPENDENCIES
 
 h3. Redmine SCMacros
 
-Redmine Wiki Publisher uses wiki macros that are not recognized by Redmine by default.
+Wiki Publisher Redmine uses wiki macros that are not recognized by Redmine by default.
 The repo_include macro used is from another plugin, "Redmine SCMacros":https://github.com/gpr/redmine_scmacros
 This macro includes a file from repository (svn, git, etc) in the project wiki.
 
@@ -35,7 +35,7 @@ Example:
 
 h2. USAGE
 
-Assuming that the project repository and Redmine Wiki Publisher url are properly configured (check the configuration section above),
+Assuming that the project repository and Wiki Publisher Redmine url are properly configured (check the configuration section above),
 click on the link “Import From Repository” in the wiki edit page.
 
 The plugin will try to find all wiki files (default is *.textile) in the given “Design Repository URL”.

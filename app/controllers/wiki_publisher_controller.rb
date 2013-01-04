@@ -38,7 +38,7 @@ class WikiPublisherController < ApplicationController
     if(@repo.nil?)
       raise l(:error_failed_to_access_project_repository)
     elsif(@wiki_publisher_setting.nil? || @design_repository_url.nil?)
-      raise l(:error_failed_to_access_redmine_wiki_publisher_settings)
+      raise l(:error_failed_to_access_wiki_publisher_settings)
     end
   end
 

@@ -7,12 +7,12 @@ Dispatcher.to_prepare :redmine_wiki_publisher do
     end
 end
 
-Redmine::Plugin.register :redmine_wiki_publisher do
-  name 'Redmine Wiki Publisher plugin'
-  author 'Daniel Camargo / Heverson Vasconcelos'
+Redmine::Plugin.register :wiki_publisher_redmine do
+  name 'Plugin Wiki Publisher'
+  author 'Daniel Camargo / Heverson Vasconcelos / Rodrigo Kuninari'
   description 'This is a plugin for Redmine that publishes project documentation into wiki'
   version '0.0.9'
-  url "https://github.com/heversonvasconcelos/redmine_wiki_publisher-ror"
+  url "https://github.com/heversonvasconcelos/wiki_publisher_redmine"
 
   requires_redmine :version_or_higher => '1.3.0'
 

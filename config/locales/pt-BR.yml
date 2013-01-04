@@ -5,7 +5,7 @@ pt-BR:
   import_from_repo_title: "Importar Documentação do Repositório"
   field_design_repository_url: "URL do Diretório Design no Repositório"
 
-  error_failed_to_save_redmine_wiki_publisher_settings: "Falha na atualização das configurações do Redmine Wiki Publisher"
+  error_failed_to_save_wiki_publisher_settings: "Falha na atualização das configurações do Wiki Publisher"
   error_failed_to_access_project_repository: "Falha ao acessar o repositório. Provavelmente não foi integrado ao Redmine corretamente"
-  error_failed_to_access_redmine_wiki_publisher_settings: "Falha ao acessar o plugin Redmine Wiki Publisher. Provavelmente não foi instalado corretamente"
-  error_repository_wiki_files_not_found: "Falha ao encontrar os arquivos wiki no repositório. Provavelmente a URL do plugin Redmine Wiki Publisher não foi informada corretamente"
+  error_failed_to_access_wiki_publisher_settings: "Falha ao acessar o plugin Wiki Publisher. Provavelmente não foi instalado corretamente"
+  error_repository_wiki_files_not_found: "Falha ao encontrar os arquivos wiki no repositório. Provavelmente a URL do plugin Wiki Publisher não foi informada corretamente"
